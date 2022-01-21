@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+
+<body class="bgded overlay" style="background-image:url('/static/images/demo/backgrounds/01.png');background-size: 1770px 900px;">
+<div class="fram" >
+    <div id="main">
+        <div class="log">
+            <h3>Login</h3>
+        </div><br><br>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="a">
+                <input type="email" name="email1" class="name" placeholder="Enter Email" required>
+                <hr>
+            </div>
+            
+            <div class="b">
+                <input type="password" name="pass1" class="pass" placeholder="Enter Password" required>
+                <a href="{% url 'conf' %}">Forgot password?</a>
+                <hr>
+            </div>
+            <br>
+            <div class="c">
+                <input type="submit" name="submit" class="btn" value="LOGIN">
+            </div>
+        </form>
+        {% csrf_token %}
+        <div class="d">
+            <p class="up">Not member? <a class="anc" href="{% url 'regi' %}">Signup</a></p>
+        </div>
+    </div>
+</div> 
+</body>
+<div class="clear"></div>
+{% endblock%}
+</html>

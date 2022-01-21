@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{%if ditem%}
+<br><br>
+<div>
+  <h4 style="color: white;">Your shopping cart contains:
+    <span>{{num}} Products</span>
+  </h4>
+<br><br>
+  <div>
+    {% for q in ditem %}
+
+    <table>
+        <thead>
+          <th width='50'>{{forloop.counter}}</th>
+          <th width="100">
+            <img style="width: 50px; height: 50px;" src="{{ q.Item.image.url }}" alt="Sheep">
+          </th>
+          
+          <th width='500'>{{q.Item.Title}}</th>
+          <th width='200'>Rs.{{q.Item.Price}}</th>
+          <th>{{q.added_on}}</th>
+          <th><a href="{%url 'delete' q.id %}">Delete</a></th>
+        </thead>
+    </table>
+    {% endfor %}
+
+    {% else %}
+    <p>No item in cart</p>
+    {% endif %}
+  </div>
+</div>
+
+
+<div class="col-md-4 checkout-left-basket">
+  <table class="table">
+      <thead>
+          <th width='650'> <strong>Total amount:</strong></th>
+          <th><strong>{{ total }}</strong></th>
+          <th><a href="{% url 'item' %}"><strong>Want-to-add-something</strong></a></th>
+      </thead>
+
+  </table>
+</div>
+<br><br><br>
+
+<div class="col-md-4 checkout-left-basket">
+  <h4 style="color: white;">Billing Address</h4>
+
+  <table class="table">
+    <form action="{%url 'place_order' %}" method="POST">
+      {% csrf_token %}
+
+      <thead>
+          <th width='450'> <strong>Full Name</strong></th>
+          <th><input type="text" name="name" placeholder="Full name" style="color:white; background-color:transparent;border-style: hidden;text-align:center;width:900px"></th>
+      </thead>
+      <thead>
+          <th width='450'> <strong>Email</strong></th>
+          <th><input type="email" name="email" placeholder="Email" style="color:white; background-color:transparent;border-style:hidden;text-align:center;width:900px"></th>
+      </thead>
+      <thead>
+          <th width='450'> <strong>Phone number</strong></th>
+          <th><input type="number" name="landmark" placeholder="Phone-number" style="color:white; background-color:transparent;border-style: hidden;text-align:center;width:900px"></th>
+      </thead>
+      <thead>
+          <th width='450'> <strong>Town/City</strong></th>
+          <th><input type="text" name="city" placeholder="Town/City" style="color:white; background-color:transparent;border-style: hidden;text-align:center;width:900px"></th>
+      </thead>
+      <thead>
+          <th width='450'> <strong>Address type</strong></th>
+          <th><input type="text" name="city" placeholder="Home/Office/Commercial" style="color:white; background-color:transparent;border-style: hidden;text-align:center;width:900px"></th>
+
+      </thead>
+    </form>
+  </table>
+</div>
+
+
+
+<div class="col-md-8 address_form" style="margin-left: 50%;color: black;width:20px; height: 80px;;">
+
+  <form class="text-center border border-light p-5" action="{%url 'place_order' %}" method="POST">
+    {% csrf_token %}
+
+<br>
+    <script src="https://checkout.razorpay.com/v1/checkout.js" 
+    data-key="rzp_test_lqsW2gWKFbM27g" 
+    data-amount="{{ billing }}"
+    data-currency="INR" 
+    data-order_id="{{my_order.order_id}}" 
+    data-buttontext="Pay with Razorpay"
+    data-name="Professional Cipher"
+    data-description="Django and Data Science"
+    data-image="https://example.com/your_logo.jpg" 
+    data-prefill.name="PC"
+    data-prefill.email="pc@studygyaan.com" 
+    data-theme.color="#F37254"></script>
+
+</form>
+</div>
+
+{% endblock content %}
+
+
+
+
+
+

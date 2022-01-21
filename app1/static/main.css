@@ -1,0 +1,165 @@
+body {
+    background-image:url "{% static 'images/demo/backgrounds/01.png' %}";
+}
+.fram {
+    height: 365px;
+    width: 750px;
+    margin: auto;
+}
+#main {
+    height: 500px;
+    width: 750px;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    float: left;
+}
+
+#main1 {
+    height: 500px;
+    width: 750px;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    float: right;
+}
+
+.log {
+    text-align: center;
+    font-size: xxx-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: auto;
+    height: 50px;
+    width: 275px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    text-size-adjust: 200px;
+}
+
+h3 {
+    border-top: white 1px solid;
+    border-bottom: white 1px solid;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+h3:hover {
+    border-top: white 5px solid;
+    border-bottom: white 5px solid;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    transition: 1s linear;
+}
+.a,
+.b,
+.c,
+.d {
+    color: white;
+    margin: auto;
+    height: 50px;
+    width: 175px;
+    text-align: center;
+    border-style: hidden;
+}
+
+.name,
+.pass,
+.btn,
+.up {
+    /* color: ; */
+    text-align: center;
+    font-size: large;
+    border-style: hidden;
+    width: 175px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+
+}
+
+.btn {
+    border: white 2px solid;
+    cursor: pointer;
+    box-shadow: 0 5px rgba(153, 153, 153, 0.137);
+    background-color: transparent;
+    letter-spacing: 4px;
+    height: 40px;
+
+}
+
+.up {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.anc {
+    color: red;
+    box-shadow: 0 5px rgba(248, 107, 102, 0.329);
+
+}
+
+.anc:hover {
+    font-size: x-large;
+}
+.anc:active {
+    color: yellow;
+    box-shadow: 0 10px rgba(223, 10, 3, 0.548);
+    transform: translateY(4px);
+}
+.anc:target {
+    float: right;
+}
+
+.name,
+.pass {
+    padding-top: 2px;
+    background-color: transparent;
+}
+
+.name,
+.pass:focus {
+    outline: none;
+}
+
+hr {
+    border-top: 4px white solid;
+    width: 175px;
+}
+
+.btn:hover {
+    background-image:url "{% static 'images/demo/backgrounds/01.png' %}";
+    background-color: white;
+    color: black;
+}
+
+.btn:active {
+    box-shadow: 0 10px #666;
+    transform: translateY(4px);
+}
+
+.btn:target {
+    float: right;
+}
+#main:hover {
+    background-image:url "{% static 'images/demo/backgrounds/01.png' %}";
+    border-left-color:  white;
+    border-right-color:  white;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-width: 5px;
+    border-radius: 50%;
+    border-style: solid;
+    transition: 0.3s linear;
+}
+#main1:hover {
+    background-image:url "{% static 'images/demo/backgrounds/01.png' %}";
+    border-left-color:  #ffcccc;
+    border-right-color:  #ccffff;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-width: 5px;
+    border-radius: 50%;
+    border-style: solid;
+    transition: 0.3s linear;
+}

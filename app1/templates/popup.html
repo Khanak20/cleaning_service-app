@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+	initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <title>Automatic Pop-Up</title>
+    <style>
+        body {
+            height: auto;
+            width: 100%;
+            background: transparent;
+            z-index: 11111;
+            /* overflow: auto; */
+        }
+
+        #popup {
+            width: 550px;
+            height: 250px;
+            /* background-image: url(); */
+            background: transparent;
+            background-repeat: no-repeat;
+            background-position: center;
+            /* background-size: cover; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 2px 2px 5px 3px white;
+        }
+
+        .submitId {
+            position: relative;
+            top: -30px;
+            left: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="POPmain" style="height:500px;display: none;">
+        <div id="popup">
+            <div style="height:200px; overflow: auto;"> <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, odit dolor sapiente adipisci earum perspiciatis atque voluptates velit consequuntur, nam commodi totam? Eius, esse laboriosam? Asperiores eius dolorem culpa obcaecati? Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ex quidem in officia sunt veritatis commodi consequatur laborum neque quod asperiores, animi eum debitis tempora, sed velit cumque reprehenderit nisi voluptatem eveniet. Aliquam aperiam architecto autem, distinctio minus neque nam quis esse ipsa ad necessitatibus accusamus facere unde debitis iure tempora provident, quod cumque inventore dignissimos sit! Veniam officiis corporis illum expedita dolores quos quia, sequi accusantium vero pariatur saepe harum, laborum, suscipit facilis libero! Expedita obcaecati nostrum delectus laboriosam, ut ipsam deserunt, sunt inventore sed odio animi doloremque earum cupiditate quo veritatis aliquid a magni numquam adipisci quasi aperiam illo? Rerum pariatur repellendus inventore veritatis laudantium sequi, voluptates vitae quo atque eaque tempore hic, laborum nihil quod ea molestiae sunt. Quis corrupti a, voluptatum sunt dolorem provident doloremque placeat, at ducimus, aut excepturi? Velit ducimus dolor ab soluta ipsam fugit omnis hic, nihil qui delectus natus ullam incidunt mollitia quo quae! Atque, amet ipsum. Quos quaerat nesciunt itaque eos corrupti rem laborum quam, nam sunt pariatur dolorum enim explicabo error doloribus in quidem provident earum debitis eaque iure perferendis blanditiis mollitia exercitationem saepe! Enim nam modi eaque omnis impedit nostrum deserunt voluptatem aspernatur. Quasi debitis molestias totam recusandae asperiores quae nulla optio, excepturi illo odit soluta, ipsa provident incidunt tempora. Minima recusandae est explicabo, cumque ut aliquam velit vero labore pariatur? A cupiditate facilis autem ullam odio suscipit eaque. A vero vitae atque quasi nesciunt amet iure ipsum officia? Consequatur nihil nemo distinctio aliquid sequi, laudantium quis aspernatur voluptates. </p> </div>
+            <button class="submitId btn btn-primary font-weight-bold mt-5">
+                Subscribe
+            </button>
+            <button class="submitId btn btn-primary text-center font-weight-bold mt-5">
+                No,Thanks
+            </button>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first,then Popper.js,then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        // When document is ready
+        $(document).ready(function () {
+            // SetTimeout function
+            // Will execute the function
+            // after 3 sec
+            setTimeout(function () {
+                $(".POPmain").css("display", "block");
+            }, 3000);
+        });
+        $(".submitId").click(function () {
+            $(".POPmain").css("display", "none");
+        });
+    </script>
+</body>
+
+</html>

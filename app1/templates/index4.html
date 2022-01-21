@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    
+</head>
+
+
+<body class="bgded overlay" style="background-image:url('/app1/static/images/demo/backgrounds/01.png');background-size: 1770px 900px;">
+<div class="fram" >
+    <div id="main">
+        <div class="log">
+            <h3>Signup</h3>
+        </div><br><br>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="a">
+                <input  type="text" name="name1" class="name" placeholder="Enter Username" required>
+                <hr>
+            </div>
+            <div class="a">
+                <input type="email" name="email1" class="name" placeholder="Enter Email" required>
+                <hr>
+            </div>
+            <div class="b">
+                <input type="password" name="pass1" class="pass" placeholder="Enter Password" required>
+                <hr>
+            </div>
+            <div class="b">
+                <input type="password" name="pass2" class="pass" placeholder="Confirm Password" required>
+                <hr>
+            </div>
+            <div class="b">
+                <input type="text" name="pass3" class="pass" placeholder="Password Checker" required>
+                <hr>
+            </div><br>
+            <div class="c">
+                <input type="submit" name="submit" class="btn" value="SIGNUP">
+            </div>
+        </form>
+        {% csrf_token %}
+        <div class="d">
+            <p class="up">Already member? <a class="anc" href="{% url 'regi1' %}">Login</a></p>
+        </div>
+    </div>
+</div> 
+</body>
+<div class="clear"></div>
+{% endblock%}
+</html>

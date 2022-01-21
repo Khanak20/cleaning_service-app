@@ -1,0 +1,19 @@
+<form method="POST">
+    {% csrf_token %}
+    <label>
+        New Password :
+    </label>
+    <input type="password" name="pass11"><br>
+    
+    <label>
+        Confirm Password :
+    </label>
+
+    <input type="password" name="pass22">
+    {% for message in messages %}
+                {% if message.tags %} 
+                {{ message }}
+                {% endif %}
+            {% endfor %}<br>
+    <input type="submit" name="submit">
+</form>
